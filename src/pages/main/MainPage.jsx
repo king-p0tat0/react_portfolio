@@ -12,7 +12,8 @@ const styles = {
     fontFamily: 'system-ui, -apple-system, sans-serif',
     margin: 0,
     padding: 0,
-    paddingTop: '30px'
+    paddingTop: '30px',
+    position: 'relative'
   }
 ,
   backgroundGradient: {
@@ -62,12 +63,12 @@ const styles = {
     backgroundClip: 'text',
     color: '#333',
     fontWeight: 'bold',
-    fontSize: '3rem',
-    marginBottom: '16px',
+    fontSize: '2.4rem',
+    marginTop: '20px',
     margin: '0 0 16px 0'
   },
   animatedTitle: {
-    fontSize: '7.5rem',
+    fontSize: '8rem',
     fontWeight: 'bold',
     color: '#333',
     userSelect: 'none',
@@ -401,7 +402,7 @@ const MainPage = () => {
 
           {/* Main heading */}
           <h1 style={styles.gradientText}>
-            경험으로 쌓은 비전공자
+            한계를 기회로 바꾸며 달려온
           </h1>
           <AnimatedText text="Fullstacker" />
 

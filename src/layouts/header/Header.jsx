@@ -1,5 +1,5 @@
 import React from 'react';
-import './header.css';
+import './Header.css';
 import '@fontsource/mogra';
 import '@fontsource/radley';
 
