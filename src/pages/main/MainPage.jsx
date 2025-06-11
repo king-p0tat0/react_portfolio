@@ -1,4 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import {
+  Box,
+  Typography,
+  Button,
+  Chip,
+  Container,
+  Fade,
+  Slide
+} from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 const styles = {
   mainContainer: {
@@ -140,6 +150,36 @@ const styles = {
     pointerEvents: 'none'
   }
 };
+
+const GlassButton = styled(Button)(({ theme, variant }) => ({
+  borderRadius: '50px',
+  padding: '12px 32px',
+  fontSize: '1.1rem',
+  fontWeight: 'bold',
+  textTransform: 'none',
+  transition: 'all 0.3s ease',
+  ...(variant === 'primary' ? {
+    background: 'linear-gradient(45deg, #ff6b35, #ec407a)',
+    color: 'white',
+    boxShadow: '0 8px 32px rgba(255, 107, 53, 0.3)',
+    '&:hover': {
+      transform: 'translateY(-2px) scale(1.05)',
+      boxShadow: '0 12px 40px rgba(255, 107, 53, 0.4)',
+      background: 'linear-gradient(45deg, #ec407a, #9c27b0)',
+    },
+  } : {
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backdropFilter: 'blur(10px)',
+    border: '2px solid rgba(255, 182, 193, 0.3)',
+    color: '#333',
+    '&:hover': {
+      transform: 'translateY(-2px) scale(1.05)',
+      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+      borderColor: 'rgba(255, 182, 193, 0.5)',
+      boxShadow: '0 8px 32px rgba(255, 182, 193, 0.2)',
+    },
+  }),
+}));
 
 const keyframes = `
   * {
@@ -431,12 +471,12 @@ const MainPage = () => {
             하는 개발자입니다.
           </p>
 
-          {/* CTA Button */}
-          <div className={isVisible ? 'fade-in' : ''}>
-            <button style={styles.button} className="button-hover">
-              프로젝트 보기
-            </button>
-          </div>
+              <GlassButton variant="primary" size="large" style={{ marginRight: '20px'}}>
+                프로젝트 보기
+              </GlassButton>
+              <GlassButton variant="secondary" size="large">
+                프로필 보기
+              </GlassButton>
         </div>
 
         {/* Scroll indicator */}
