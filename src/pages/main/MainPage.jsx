@@ -9,7 +9,7 @@ import {
   Slide
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import './MainPage.css';
+import './css/MainPage.css';
 
 const GlassButton = styled(Button)(({ theme, variant }) => ({
   borderRadius: '50px',
@@ -166,97 +166,99 @@ const MainPage = () => {
   }, []);
 
   return (
-    <div className="main-container">
-      {/* Animated background gradient */}
-      <div className="background-gradient" />
+    <>
+      <div className="main-container">
+        <div className="background-gradient" />
 
-      {/* Twinkling stars */}
-      {stars.map((star) => (
-        <div
-          key={star.id}
-          className="star"
-          style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
-            width: `${star.size}px`,
-            height: `${star.size}px`,
-            boxShadow: `0 0 ${star.size * 2}px rgba(255, 215, 0, 0.8)`,
-            animationDelay: `${star.delay}s`,
-            animationDuration: `${star.duration}s`
-          }}
-        />
-      ))}
+        {/* Twinkling stars */}
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className="star"
+            style={{
+              left: `${star.x}%`,
+              top: `${star.y}%`,
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              boxShadow: `0 0 ${star.size * 2}px rgba(255, 215, 0, 0.8)`,
+              animationDelay: `${star.delay}s`,
+              animationDuration: `${star.duration}s`
+            }}
+          />
+        ))}
 
-      {/* Light sparkles */}
-      {sparkles.map((sparkle) => (
-        <LightSparkle
-          key={sparkle.id}
-          x={sparkle.x}
-          y={sparkle.y}
-          delay={sparkle.delay}
-          duration={sparkle.duration}
-          size={sparkle.size}
-        />
-      ))}
+        {/* Light sparkles */}
+        {sparkles.map((sparkle) => (
+          <LightSparkle
+            key={sparkle.id}
+            x={sparkle.x}
+            y={sparkle.y}
+            delay={sparkle.delay}
+            duration={sparkle.duration}
+            size={sparkle.size}
+          />
+        ))}
 
-      {/* Big stars */}
-      {bigStars.map((star) => (
-        <BigStar
-          key={star.id}
-          x={star.x}
-          y={star.y}
-          delay={star.delay}
-          duration={star.duration}
-          size={star.size}
-        />
-      ))}
+        {/* Big stars */}
+        {bigStars.map((star) => (
+          <BigStar
+            key={star.id}
+            x={star.x}
+            y={star.y}
+            delay={star.delay}
+            duration={star.duration}
+            size={star.size}
+          />
+        ))}
 
-      {/* Main content */}
-      <div className="container">
-        {/* Badge */}
-        <div className={`badge ${isVisible ? 'slide-down' : ''}`}>
-          <div className="badge-icon" />
-          FULLSTACK DEVELOPER
+        {/* Main content */}
+        <div className="container">
+          {/* Badge */}
+          <div className={`badge ${isVisible ? 'slide-down' : ''}`}>
+            FULLSTACK DEVELOPER
+          </div>
+
+          {/* Main heading */}
+          <h1 className="gradient-text">
+            한계를 기회로 바꾸며 달려온
+          </h1>
+          <AnimatedText text="Fullstacker" />
+
+          {/* Subtitle */}
+          <p className={`subtitle responsive-subtitle ${isVisible ? 'slide-up' : ''}`}>
+            비전공자의 한계를 실전 경험과 기술력으로 극복하며,
+            <br />
+            <span className="highlight-text">
+              창의적인 아이디어
+            </span>
+            로&nbsp;
+            <span className="highlight-text">
+              사용자 경험을 혁신
+            </span>
+            하는 개발자입니다.
+          </p>
+
+          <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <GlassButton variant="primary" size="large">
+              프로젝트 보기
+            </GlassButton>
+            <GlassButton variant="secondary" size="large">
+              프로필 보기
+            </GlassButton>
+          </div>
         </div>
 
-        {/* Main heading */}
-        <h1 className="gradient-text">
-          한계를 기회로 바꾸며 달려온
-        </h1>
-        <AnimatedText text="Fullstacker" />
-
-        {/* Subtitle */}
-        <p className={`subtitle responsive-subtitle ${isVisible ? 'slide-up' : ''}`}>
-          비전공자의 한계를 실전 경험과 기술력으로 극복하며,
-          <br />
-          <span className="highlight-text">
-            창의적인 아이디어
-          </span>
-          로&nbsp;
-          <span className="highlight-text">
-            사용자 경험을 혁신
-          </span>
-          하는 개발자입니다.
-        </p>
-
-        <GlassButton variant="primary" size="large" style={{ marginRight: '20px'}}>
-          프로젝트 보기
-        </GlassButton>
-        <GlassButton variant="secondary" size="large">
-          프로필 보기
-        </GlassButton>
+        {/* Scroll indicator */}
+        <div className={`scroll-indicator ${isVisible ? 'fade-in' : ''}`}>
+          <div className="scroll-text">
+            Scroll Down
+          </div>
+          <div className="scroll-dot">
+            <div className="scroll-dot-inner" />
+          </div>
+        </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className={`scroll-indicator ${isVisible ? 'fade-in' : ''}`}>
-        <div className="scroll-text">
-          Scroll Down
-        </div>
-        <div className="scroll-dot">
-          <div className="scroll-dot-inner" />
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +14,8 @@ body, html {
 
 .main-container {
   width: 100vw;
-  background-color: #FFF5EC;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFF5EC 0%, #FFF5F8 30%, #F0F9FF 70%, #FAF5FF 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -19,18 +23,18 @@ body, html {
   font-family: system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
-  padding-top: 100px;
+  padding-top: 30px;
   position: relative;
 }
 
 .background-gradient {
   position: absolute;
   inset: 0;
-  opacity: 0.3;
+  opacity: 0.2;
   background:
-    radial-gradient(circle at 20% 50%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 218, 185, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(255, 228, 196, 0.3) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(255, 182, 193, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 218, 185, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 228, 196, 0.2) 0%, transparent 50%);
   animation: pulse 4s ease-in-out infinite;
 }
 
@@ -38,32 +42,39 @@ body, html {
   position: relative;
   z-index: 10;
   text-align: center;
-  padding: 20px;
-  max-width: 1200px;
+  padding: 40px 20px;
+  max-width: 1400px;
   width: 100%;
   margin: 0;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > * {
+  flex-shrink: 0;
+}
+
+.container .MuiButton-root {
+  display: inline-flex !important;
 }
 
 .badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+   justify-content: center;
+     white-space: nowrap;
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   color: #333;
   font-weight: bold;
-  margin-bottom: 32px;
-  padding: 8px 24px;
+  margin-bottom: 40px;
+  padding: 20px 120px;
   border-radius: 50px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   gap: 8px;
-}
-
-.badge-icon {
-  width: 12px;
-  height: 12px;
-  background: linear-gradient(45deg, #ff6b35, #ec407a);
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
 }
 
 .gradient-text {
@@ -71,16 +82,16 @@ body, html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-family: "Asta Sans", sans-serif;
   color: #333;
   font-weight: bold;
   font-size: 2.4rem;
-  margin-top: 20px;
-  margin: 0 0 16px 0;
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
 .animated-title {
   font-size: 8rem;
-  font-weight: bold;
   color: #333;
   user-select: none;
   display: flex;
@@ -91,6 +102,8 @@ body, html {
 
 .animated-title span {
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-family: "Asta Sans", serif !important;
+  font-weight: bolder;
 }
 
 .animated-title span.active-char {
@@ -107,6 +120,7 @@ body, html {
   max-width: 600px;
   margin: 0 auto 48px auto;
   line-height: 1.6;
+  font-family: "Asta Sans", sans-serif;
   font-size: 1.35rem;
 }
 

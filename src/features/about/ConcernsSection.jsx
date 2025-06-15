@@ -76,7 +76,6 @@ const ConcernsSection = () => {
             data-id={concern.id}
           >
             <div className="concern-bubble">
-              <div className="emoji">{concern.emoji}</div>
               <div className="concern-content">
                 <h3 className="concern-title">"{concern.title}"</h3>
                 <div className="concern-text">

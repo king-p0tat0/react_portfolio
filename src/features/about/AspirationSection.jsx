@@ -136,7 +136,7 @@ const AspirationSection = () => {
       {/* Main content */}
       <div className="content-container">
         <div className="section-title asp-title">
-          <h2>'비전공'이라는 틀을 깨다</h2>
+          <h2>'비전공'이라는 틀을 깨다!</h2>
         </div>
 
         <div className="content-wrapper">

@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import Header from '@/layouts/header/Header.jsx'
 import Footer from '@/layouts/footer/Footer.jsx'
 import MainPage from '@/pages/main/MainPage.jsx'
