@@ -51,6 +51,21 @@ const ProfileSection = () => {
           </li>
         </ul>
 
+        {/* Introduction Section */}
+        <div className="intro-container">
+          <h1>보이는 것 이상의 가치를 만들다</h1>
+          <p>사용자의 마음까지 설계하는, Empathetic Developer</p>
+          <p>
+            풀스택 개발자 과정을 수료하며 백엔드부터 프론트엔드까지 다양한 영역을 경험했지만
+          </p>
+          <p>
+            특히 사용자와 가장 가까운 UI 설계에 가장 큰 열정을 쏟으며 그만큼의 보람을 느꼈습니다.
+          </p>
+          <p>
+            UI는 단순한 화면이 아니라, 좋은 코드와 함께 사용자 경험에 큰 가치를 더하는 핵심 요소라고 생각합니다.
+          </p>
+        </div>
+
         {/* Modal */}
         {isModalOpen && (
           <div className={`modal ${isModalVisible ? 'modal-show' : ''}`} onClick={closeModal}>

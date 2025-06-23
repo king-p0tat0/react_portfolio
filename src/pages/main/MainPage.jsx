@@ -235,7 +235,7 @@ const MainPage = () => {
             <span className="highlight-text">
               사용자 경험을 혁신
             </span>
-            하는 개발자입니다.
+            하는 <span className="highlight-text">정서윤</span>입니다.
           </p>
 
           <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
