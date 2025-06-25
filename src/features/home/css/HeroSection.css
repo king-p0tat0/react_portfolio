@@ -1,3 +1,6 @@
+/* ================================
+   전역 스타일 및 기본 설정
+   ================================ */
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +8,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     color: #333;
     overflow-x: hidden;
     min-height: 100vh;
@@ -23,6 +26,113 @@ body {
     z-index: -1;
 }
 
+/* ================================
+   헤더 스타일
+   ================================ */
+.hero-header {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 100;
+    display: flex;
+    gap: 2rem;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.icon-container:hover {
+    transform: translateY(-2px);
+}
+
+.github-icon,
+.mail-icon {
+    font-size: 1.5rem;
+    color: #525C66;
+    transition: all 0.3s ease;
+}
+
+.icon-container:hover .github-icon,
+.icon-container:hover .mail-icon {
+    color: #1C2833;
+}
+
+.icon-text {
+    font-size: 0.75rem;
+    color: #525C66;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.icon-container:hover .icon-text {
+    color: #1C2833;
+}
+
+/* ================================
+   이메일 툴팁 스타일
+   ================================ */
+.email-container {
+    position: relative;
+}
+
+.email-tooltip {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.email-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.email-tooltip span {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+/* 말풍선 화살표 */
+.tooltip-arrow {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #333;
+}
+
+/* ================================
+   히어로 섹션 및 타이틀
+   ================================ */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -31,6 +141,19 @@ body {
     padding: 2rem;
     position: relative;
     user-select: none;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.03) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero-content {
@@ -45,7 +168,7 @@ body {
     font-weight: 700;
     margin-bottom: 4rem;
     line-height: 1.2;
-    color: #2c3e50;
+    color: #212E3C;
 }
 
 .hero-subtitle {
@@ -60,7 +183,7 @@ body {
 .hero-description {
     font-size: 1.4rem;
     font-weight: 400;
-    color: #7f8c8d;
+    color: #576061;
     opacity: 0;
     transform: translateY(30px);
 }
@@ -73,6 +196,9 @@ body {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+/* ================================
+   타이핑 효과 및 액센트
+   ================================ */
 .typing-text {
     position: relative;
     display: inline-block;
@@ -99,6 +225,65 @@ body {
     animation: blink 1s infinite;
 }
 
+.accent-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #ffbb00;
+    border-radius: 50%;
+    margin-left: 8px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 4s forwards;
+}
+
+/* ================================
+   스크롤 다운 아이콘
+   ================================ */
+.scroll-down {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+    text-align: center;
+}
+
+.scroll-down.show {
+    opacity: 1;
+}
+
+.mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(44, 62, 80, 0.6);
+    border-radius: 12px;
+    position: relative;
+    margin: 0 auto 8px;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background-color: rgba(44, 62, 80, 0.6);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+}
+
+.scroll-text {
+    font-size: 0.8rem;
+    color: rgba(44, 62, 80, 0.6);
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* ================================
+   애니메이션
+   ================================ */
 @keyframes blink {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
@@ -115,28 +300,65 @@ body {
     }
 }
 
-.accent-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #ffbb00;
-    border-radius: 50%;
-    margin-left: 8px;
-    opacity: 0;
-    animation: fadeIn 0.5s ease-out 4s forwards;
-}
-
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
 
-/* 반응형 디자인 */
+@keyframes scroll {
+    0% {
+        top: 8px;
+        opacity: 1;
+    }
+    50% {
+        top: 16px;
+        opacity: 0.5;
+    }
+    100% {
+        top: 24px;
+        opacity: 0;
+    }
+}
+
+/* ================================
+   반응형 디자인
+   ================================ */
 @media (max-width: 768px) {
+    /* 헤더 반응형 */
+    .hero-header {
+        top: 1.5rem;
+        left: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .github-icon,
+    .mail-icon {
+        font-size: 1.3rem;
+    }
+
+    .icon-container {
+        padding: 0.4rem;
+    }
+
+    .icon-text {
+        font-size: 0.7rem;
+    }
+
+    /* 툴팁 반응형 */
+    .email-tooltip {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    /* 히어로 섹션 반응형 */
+    .hero-section {
+        padding: 1rem;
+    }
+
     .hero-title {
         font-size: 2.5rem;
-        margin-bottom: 2.5rem; /* 모바일에서도 간격 조정 */
+        margin-bottom: 2.5rem;
     }
 
     .hero-subtitle {
@@ -146,16 +368,39 @@ body {
     .hero-description {
         font-size: 1.1rem;
     }
-
-    .hero-section {
-        padding: 1rem;
-    }
 }
 
 @media (max-width: 480px) {
+    /* 헤더 반응형 */
+    .hero-header {
+        top: 1rem;
+        left: 1rem;
+        gap: 1.2rem;
+    }
+
+    .github-icon,
+    .mail-icon {
+        font-size: 1.2rem;
+    }
+
+    .icon-container {
+        padding: 0.3rem;
+    }
+
+    .icon-text {
+        font-size: 0.65rem;
+    }
+
+    /* 툴팁 반응형 */
+    .email-tooltip {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
+
+    /* 히어로 섹션 반응형 */
     .hero-title {
         font-size: 2rem;
-        margin-bottom: 2rem; /* 작은 화면에서도 간격 조정 */
+        margin-bottom: 2rem;
     }
 
     .hero-subtitle {
@@ -165,76 +410,4 @@ body {
     .hero-description {
         font-size: 1rem;
     }
-}
-
-/* 미세한 배경 패턴 */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.03) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-/* 스크롤 다운 아이콘 */
-.scroll-down {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.8s ease-out;
-  text-align: center;
-}
-
-.scroll-down.show {
-  opacity: 1;
-}
-
-.mouse {
-  width: 24px;
-  height: 40px;
-  border: 2px solid rgba(44, 62, 80, 0.6);
-  border-radius: 12px;
-  position: relative;
-  margin: 0 auto 8px;
-}
-
-.wheel {
-  width: 4px;
-  height: 8px;
-  background-color: rgba(44, 62, 80, 0.6);
-  border-radius: 2px;
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scroll 2s infinite;
-}
-
-.scroll-text {
-  font-size: 0.8rem;
-  color: rgba(44, 62, 80, 0.6);
-  letter-spacing: 1px;
-  font-weight: 500;
-}
-
-@keyframes scroll {
-  0% {
-    top: 8px;
-    opacity: 1;
-  }
-  50% {
-    top: 16px;
-    opacity: 0.5;
-  }
-  100% {
-    top: 24px;
-    opacity: 0;
-  }
 }

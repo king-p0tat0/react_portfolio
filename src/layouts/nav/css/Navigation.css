@@ -1,0 +1,49 @@
+.navigation {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+}
+
+.navigation--left {
+  left: 48px;
+}
+
+.navigation--right {
+  right: 48px;
+}
+
+.navigation--center {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navigation__items {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.navigation__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #BABFC7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navigation__dot:hover {
+  background-color: #4b5563;
+  transform: scale(1.1);
+}
+
+.navigation__dot--active {
+  background-color: #000000;
+  transform: scale(1.25);
+}
+
+.navigation__dot--active:hover {
+  background-color: #000000;
+  transform: scale(1.25);
+}
