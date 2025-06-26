@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './css/ProfileSection.css';
-import ProfileImg from '@/assets/images/profile/profile-image.jpg'
-import Badge from '@/assets/images/profile/badge.png'
+import ProfileImg from '@/assets/images/profile/profile_img.png'
 import NameCard from '@/assets/images/profile/name-card.png'
 
 const ProfileSection = () => {
@@ -20,18 +19,17 @@ const ProfileSection = () => {
 
   return (
     <>
+        <div className="profile-section-wrapper">
       <div className="section-title">
         <h2>신입 개발자 '정서윤'을 소개합니다!</h2>
       </div>
       <section id="profile" className="profile-section">
         <ul className="profile-list">
           <li className="profile-image">
-            <img src={ProfileImg} alt="프로필 사진" />
           </li>
           <li className="profile-info">
             <div className="name">
               정서윤
-              <img src={Badge} alt="badge" className="badge" />
             </div>
             <div className="profile-details">
               <div className="introduce">
@@ -76,6 +74,7 @@ const ProfileSection = () => {
           </div>
         )}
       </section>
+      </div>
     </>
   );
 };

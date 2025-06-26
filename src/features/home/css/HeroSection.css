@@ -150,9 +150,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-        radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.03) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -175,7 +172,7 @@ body {
     font-size: 1.8rem;
     font-weight: 500;
     margin-bottom: 1rem;
-    color: #34495e;
+    color: #444D56;
     opacity: 0;
     transform: translateY(30px);
 }
