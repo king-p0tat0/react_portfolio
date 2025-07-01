@@ -39,6 +39,8 @@ body {
 }
 
 .icon-container {
+  cursor: pointer;
+  text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,58 +78,6 @@ body {
 
 .icon-container:hover .icon-text {
     color: #1C2833;
-}
-
-/* ================================
-   이메일 툴팁 스타일
-   ================================ */
-.email-container {
-    position: relative;
-}
-
-.email-tooltip {
-    position: absolute;
-    top: calc(100% + 15px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 14px;
-    white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-50%) translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.email-tooltip.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-.email-tooltip span {
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 400;
-    letter-spacing: normal;
-    text-transform: none;
-}
-
-/* 말풍선 화살표 */
-.tooltip-arrow {
-    position: absolute;
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid #333;
 }
 
 /* ================================
@@ -342,12 +292,6 @@ body {
         font-size: 0.7rem;
     }
 
-    /* 툴팁 반응형 */
-    .email-tooltip {
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-
     /* 히어로 섹션 반응형 */
     .hero-section {
         padding: 1rem;
@@ -386,12 +330,6 @@ body {
 
     .icon-text {
         font-size: 0.65rem;
-    }
-
-    /* 툴팁 반응형 */
-    .email-tooltip {
-        font-size: 12px;
-        padding: 7px 10px;
     }
 
     /* 히어로 섹션 반응형 */

@@ -3,7 +3,6 @@
   --subtext-color: #AAAAAA;
 }
 
-
 .profile-section {
   background: #EEEEEE;
   min-height: 100vh;
@@ -44,18 +43,18 @@
    프로필 이름 섹션 스타일
    ================================ */
 .profile-name {
-    text-align: center;
-    margin: 20px auto 30px;
+  text-align: center;
+  margin: 20px auto 30px;
 }
 
 .profile-name--kr {
-    font-size: 1.3em;
-    font-weight: bold;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .profile-name--en {
-    font-size: 1.2em;
-    color: #AAAAAA;
+  font-size: 1.2em;
+  color: #AAAAAA;
 }
 
 /* ================================
@@ -90,16 +89,16 @@
    인트로 섹션 스타일
    ================================ */
 .title-with-bar {
- display: flex;
- align-items: center;
- margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .title-bar {
- width: 4px;
- height: 1.5em;
- background-color: var(--highlight-color);
- margin-right: 12px;
+  width: 4px;
+  height: 1.5em;
+  background-color: var(--highlight-color);
+  margin-right: 12px;
 }
 
 .profile-content {
@@ -133,9 +132,8 @@
 /* ================================
    개발 경험 섹션 스타일
    ================================ */
-
 .development-experience {
-   margin: 50px auto 60px;
+  margin: 50px auto 60px;
 }
 
 .experience-list {
@@ -163,56 +161,55 @@
 /* ================================
    기술 스택 섹션 스타일
    ================================ */
-
-
 .skills-tools {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .skills-tools__groups {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .skills-tools__title {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 .skills-tools__list {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .skills-tools__item {
-    list-style: none;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .skills-tools__item img {
-    width: 30px;
-    object-fit: cover;
+  width: 30px;
+  object-fit: cover;
 }
 
 .skills-tools__item .java-icon {
-    width: 25px;
+  width: 25px;
 }
 
-.skills-tools__item .html-icon, .skills-tools__item .css-icon {
-    width: 27px;
+.skills-tools__item .html-icon,
+.skills-tools__item .css-icon {
+  width: 27px;
 }
 
 .skills-tools__item .react-icon {
-    width: 32px;
+  width: 32px;
 }
 
 /* ================================

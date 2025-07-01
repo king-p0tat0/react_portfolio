@@ -11,36 +11,14 @@ const HeroSection = () => {
   const [showDescription, setShowDescription] = useState(false);
   const [showScrollDown, setShowScrollDown] = useState(false);
   const [typingComplete, setTypingComplete] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
 
   const titleText = '보이는 것 이상의 가치를 만들다';
 
   const GITHUB_URL = 'https://github.com/king-p0tat0';
   const EMAIL_ADDRESS = 'yuni9260@naver.com';
 
-  // GitHub 링크 클릭 핸들러
   const handleGithubClick = () => {
     window.open(GITHUB_URL, '_blank', 'noopener,noreferrer');
-  };
-
-  // 이메일 복사 핸들러
-  const handleEmailClick = async () => {
-    try {
-      await navigator.clipboard.writeText(EMAIL_ADDRESS);
-      setShowTooltip(true);
-
-      // 3초 후 메시지 제거
-      setTimeout(() => {
-        setShowTooltip(false);
-      }, 3000);
-    } catch (err) {
-      console.error('복사 실패:', err);
-      setShowTooltip(true);
-
-      setTimeout(() => {
-        setShowTooltip(false);
-      }, 3000);
-    }
   };
 
   useEffect(() => {
@@ -55,7 +33,6 @@ const HeroSection = () => {
 
       setTypingComplete(true);
 
-      // 타이핑 완료 후 서브타이틀 애니메이션 (딜레이 400, 1200)
       setTimeout(() => {
         setShowSubtitle(true);
       }, 400);
@@ -64,7 +41,6 @@ const HeroSection = () => {
         setShowDescription(true);
       }, 1200);
 
-      // 스크롤 다운 아이콘 표시 (딜레이 2000)
       setTimeout(() => {
         setShowScrollDown(true);
       }, 2000);
@@ -76,22 +52,16 @@ const HeroSection = () => {
   return (
     <>
       <img src={BgImg} alt="배경이미지" className="bg-image" />
-      <header className="hero-header">
-          <div className="icon-container" onClick={handleGithubClick} style={{ cursor: 'pointer' }}>
-              <FontAwesomeIcon icon={faGithub} className="github-icon" />
-              <span className="icon-text">Github</span>
+        <header className="hero-header">
+          <div className="icon-container" onClick={handleGithubClick}>
+            <FontAwesomeIcon icon={faGithub} className="github-icon" />
+            <span className="icon-text">Github</span>
           </div>
-          <div className="icon-container email-container" onClick={handleEmailClick} style={{ cursor: 'pointer', position: 'relative' }}>
-              <FontAwesomeIcon icon={faEnvelope} className="mail-icon" />
-              <span className="icon-text">Email</span>
-
-              {/* 말풍선 툴팁 */}
-              <div className={`email-tooltip ${showTooltip ? 'show' : ''}`}>
-                <span>이메일이 복사되었습니다 :)</span>
-                <div className="tooltip-arrow"></div>
-              </div>
-          </div>
-      </header>
+          <a href={`mailto:${EMAIL_ADDRESS}`} className="icon-container email-container">
+            <FontAwesomeIcon icon={faEnvelope} className="mail-icon" />
+            <span className="icon-text">Email</span>
+          </a>
+        </header>
 
       <section className="hero-section">
         <div className="hero-content">
