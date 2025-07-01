@@ -1,3 +1,9 @@
+:root {
+  --highlight-color: #F1B005;
+  --subtext-color: #AAAAAA;
+}
+
+
 .profile-section {
   background: #EEEEEE;
   min-height: 100vh;
@@ -23,8 +29,6 @@
    ================================ */
 .profile-image {
   flex-shrink: 0;
-  margin: 0;
-  padding: 0;
 }
 
 .profile-image img {
@@ -69,12 +73,17 @@
 
 .profile-info__label {
   font-size: 1.12em;
-  color: #F1B005;
+  color: var(--highlight-color);
 }
 
 .profile-info__value {
   font-size: 1.12em;
   text-align: right;
+}
+
+.profile-info__value a {
+  text-decoration: none;
+  color: #333;
 }
 
 /* ================================
@@ -89,7 +98,7 @@
 .title-bar {
  width: 4px;
  height: 1.5em;
- background-color: #FABA07;
+ background-color: var(--highlight-color);
  margin-right: 12px;
 }
 
@@ -116,7 +125,7 @@
 }
 
 .profile-description--highlight {
-  color: #F1B005;
+  color: var(--highlight-color);
   font-weight: 500;
   margin-bottom: 40px;
 }
@@ -178,11 +187,8 @@
     margin-top: 10px;
 }
 
-.skills-tools li {
-    list-style: none;
-}
-
 .skills-tools__item {
+    list-style: none;
     width: 50px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.6);

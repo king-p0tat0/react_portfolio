@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProfileImg from '@/assets/images/profile/profile-image.png';
 import JavaIcon from '@/assets/images/icon/java.png';
 import SqlIcon from '@/assets/images/icon/sql.png';
@@ -10,6 +10,29 @@ import NotionIcon from '@/assets/images/icon/notion.png';
 import './css/ProfileSection.css';
 
 const ProfileSection = () => {
+    const languages = [
+      { src: JavaIcon, alt: "Java icon", className: "java-icon" },
+      { src: SqlIcon, alt: "SQL icon", className: "sql-icon" },
+    ];
+
+    const frontends = [
+      { src: HtmlIcon, alt: "HTML icon", className: "html-icon" },
+      { src: CssIcon, alt: "CSS icon", className: "css-icon" },
+      { src: ReactIcon, alt: "React icon", className: "react-icon" },
+    ];
+
+    const tools = [
+      { src: GitHubIcon, alt: "GitHub icon" },
+      { src: NotionIcon, alt: "Notion icon" },
+    ];
+
+    const experiences = [
+        { period: "2024.11~2024.12", project: "키보드 쇼핑몰 'EZ Board' 개발"},
+        { period: "2024.12~2025.01", project: "필기구 쇼핑몰 '필연(必然)' 개발"},
+        { period: "2025.01~2025.02", project: "반려견 문진 관리 시스템 '위드미' 개발"},
+        { period: "2025.02~2025.03", project: "통합구매관리 시스템 'Nexspace ERP' 개발 및 배포"},
+    ];
+
   return (
     <div className="profile-section">
       <div className="profile-container">
@@ -27,11 +50,15 @@ const ProfileSection = () => {
               </div>
               <div className="profile-info__item">
                 <dt className="profile-info__label">Mobile</dt>
-                <dd className="profile-info__value">010.7667.9260</dd>
+                <dd className="profile-info__value">
+                  <a href="tel:01076679260">010.7667.9260</a>
+                </dd>
               </div>
               <div className="profile-info__item">
                 <dt className="profile-info__label">E-mail</dt>
-                <dd className="profile-info__value">yuni9260@naver.com</dd>
+                <dd className="profile-info__value">
+                  <a href="mailto:yuni9260@naver.com">yuni9260@naver.com</a>
+                </dd>
               </div>
             </dl>
         </div>
@@ -55,24 +82,14 @@ const ProfileSection = () => {
                     <div className="title-bar"></div>
                     <h2 className="experience-title">Development Experience</h2>
                 </div>
-              <ul className="experience-list">
-                <li className="experience-item">
-                  <span className="experience-period">2024.11~2024.12</span>
-                  <span className="experience-project">키보드 쇼핑몰 'EZ Board' 개발</span>
-                </li>
-                <li className="experience-item">
-                  <span className="experience-period">2024.12~2025.01</span>
-                  <span className="experience-project">필기구 쇼핑몰 '필연(必然)' 개발</span>
-                </li>
-                <li className="experience-item">
-                  <span className="experience-period">2025.01~2025.02</span>
-                  <span className="experience-project">반려견 문진 관리 시스템 '위드미' 개발</span>
-                </li>
-                <li className="experience-item">
-                  <span className="experience-period">2025.02~2025.03</span>
-                  <span className="experience-project">통합구매관리 시스템 'Nexspace ERP' 개발 및 배포</span>
-                </li>
-              </ul>
+                <ul className="experience-list">
+                  {experiences.map((exp, index) => (
+                    <li className="experience-item" key={index}>
+                      <span className="experience-period">{exp.period}</span>
+                      <span className="experience-project">{exp.project}</span>
+                    </li>
+                  ))}
+                </ul>
             </section>
 
             <section className="skills-tools">
@@ -84,30 +101,37 @@ const ProfileSection = () => {
                   <div className="skills-tools__group">
                     <h3 className="skills-tools__title">Language</h3>
                     <ul className="skills-tools__list">
-                      <li className="skills-tools__item"><img src={JavaIcon} alt="Java icon" className="icon-image java-icon" /></li>
-                      <li className="skills-tools__item"><img src={SqlIcon} alt="SQL icon" className="icon-image sql-icon" /></li>
+                        {languages.map((item, index) => (
+                          <li className="skills-tools__item" key={index}>
+                            <img src={item.src} alt={item.alt} className={`icon-image ${item.className || ''}`} />
+                          </li>
+                        ))}
                     </ul>
                   </div>
 
                   <div className="skills-tools__group">
                     <h3 className="skills-tools__title">Frontend</h3>
                     <ul className="skills-tools__list">
-                      <li className="skills-tools__item"><img src={HtmlIcon} alt="HTML icon" className="icon-image html-icon" /></li>
-                      <li className="skills-tools__item"><img src={CssIcon} alt="CSS icon" className="icon-image css-icon" /></li>
-                      <li className="skills-tools__item"><img src={ReactIcon} alt="React icon" className="icon-image react-icon" /></li>
+                      {frontends.map((item, index) => (
+                        <li className="skills-tools__item" key={index}>
+                          <img src={item.src} alt={item.alt} className={`icon-image ${item.className || ''}`} />
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
                   <div className="skills-tools__group">
                     <h3 className="skills-tools__title">Cooperation</h3>
                     <ul className="skills-tools__list">
-                      <li className="skills-tools__item"><img src={GitHubIcon} alt="GitHub icon" className="icon-image" /></li>
-                      <li className="skills-tools__item"><img src={NotionIcon} alt="Notion icon" className="icon-image" /></li>
+                        {tools.map((item, index) => (
+                          <li className="skills-tools__item" key={index}>
+                            <img src={item.src} alt={item.alt} className={`icon-image ${item.className || ''}`} />
+                          </li>
+                        ))}
                     </ul>
                   </div>
               </div>
             </section>
-
         </div>
       </div>
     </div>
