@@ -1,5 +1,253 @@
-.profile-section-wrapper {
-    background-color: #4B4B4B;
-    width: 100%;
-    min-height: 100vh;
+.profile-section {
+  background: #EEEEEE;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  transform: translateX(50px);
+}
+
+/* ================================
+   프로필 이미지 섹션 스타일
+   ================================ */
+.profile-image {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-image img {
+  width: 320px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================
+   프로필 이름 섹션 스타일
+   ================================ */
+.profile-name {
+    text-align: center;
+    margin: 20px auto 30px;
+}
+
+.profile-name--kr {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.profile-name--en {
+    font-size: 1.2em;
+    color: #AAAAAA;
+}
+
+/* ================================
+   프로필 인포 섹션 스타일
+   ================================ */
+.profile-info {
+  margin-top: 20px;
+}
+
+.profile-info__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.profile-info__label {
+  font-size: 1.12em;
+  color: #F1B005;
+}
+
+.profile-info__value {
+  font-size: 1.12em;
+  text-align: right;
+}
+
+/* ================================
+   인트로 섹션 스타일
+   ================================ */
+.title-with-bar {
+ display: flex;
+ align-items: center;
+ margin-bottom: 20px;
+}
+
+.title-bar {
+ width: 4px;
+ height: 1.5em;
+ background-color: #FABA07;
+ margin-right: 12px;
+}
+
+.profile-content {
+  flex: 2;
+  color: black;
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.profile-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-left: 10px;
+  margin-bottom: 12px;
+  color: #313131;
+  font-weight: 400;
+}
+
+.profile-description--highlight {
+  color: #F1B005;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+/* ================================
+   개발 경험 섹션 스타일
+   ================================ */
+
+.development-experience {
+   margin: 50px auto 60px;
+}
+
+.experience-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+}
+
+.experience-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.experience-period {
+  min-width: 140px;
+  color: #9E9E9E;
+}
+
+.experience-project {
+  flex: 1;
+  color: #333;
+}
+
+/* ================================
+   기술 스택 섹션 스타일
+   ================================ */
+
+
+.skills-tools {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.skills-tools__groups {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-tools__title {
+    font-size: 1.3em;
+}
+
+.skills-tools__list {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.skills-tools li {
+    list-style: none;
+}
+
+.skills-tools__item {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-tools__item img {
+    width: 30px;
+    object-fit: cover;
+}
+
+.skills-tools__item .java-icon {
+    width: 25px;
+}
+
+.skills-tools__item .html-icon, .skills-tools__item .css-icon {
+    width: 27px;
+}
+
+.skills-tools__item .react-icon {
+    width: 32px;
+}
+
+/* ================================
+   반응형 디자인
+   ================================ */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .profile-image {
+    position: static;
+    transform: none;
+    left: auto;
+  }
+
+  .profile-image img {
+    width: 220px;
+  }
+
+  .profile-title {
+    font-size: 2rem;
+  }
+
+  .profile-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-title {
+    font-size: 1.5rem;
+  }
+
+  .profile-image img {
+    width: 180px;
+  }
+
+  .profile-section {
+    padding: 20px 15px;
+  }
 }

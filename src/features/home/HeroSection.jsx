@@ -16,7 +16,7 @@ const HeroSection = () => {
   const titleText = '보이는 것 이상의 가치를 만들다';
 
   const GITHUB_URL = 'https://github.com/king-p0tat0';
-  const EMAIL_ADDRESS = 'wjdtjdbs2089@gmail.com';
+  const EMAIL_ADDRESS = 'yuni9260@naver.com';
 
   // GitHub 링크 클릭 핸들러
   const handleGithubClick = () => {
